@@ -1,0 +1,23 @@
+host: "localhost:8888"
+path: "/sample"
+queries:
+  - name: "name1"
+    type: "list"
+    null_able: true
+    values:
+      - "AAAAA"
+      - "BBBBB"
+      - "CCCCC"
+  - name: "name2"
+    type: "list"
+    null_able: false
+    values:
+      - "DDDDD"
+      - "EEEEE"
+  - name: "name3"
+    type: "range"
+    null_able: false
+    values:
+      start: 0
+      stop: 30
+      step: 10
