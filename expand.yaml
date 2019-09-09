@@ -1,23 +1,23 @@
 host: "localhost:8888"
 path: "/sample"
-queries:
+query-parameters:
   - name: "name1"
     type: "list"
-    null_able: true
+    null-able: true
     values:
       - "AAAAA"
       - "BBBBB"
       - "CCCCC"
   - name: "name2"
     type: "list"
-    null_able: false
+    null-able: false
     values:
       - "DDDDD"
       - "EEEEE"
   - name: "name3"
     type: "range"
-    null_able: false
-    values:
+    null-able: false
+    range-config:
       start: 0
       stop: 30
       step: 10
