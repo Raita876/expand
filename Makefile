@@ -4,8 +4,9 @@ DOCKER_CONTAINER_NAME := go-build
 
 .PHONY: build
 build:
-	GOOS=darwin GOARCH=amd64 go build -o ./bin/$(BIN_FILE_NAME) -ldflags "-X main.version=$(VERSION)"
-	GOOS=linux GOARCH=amd64 go build -o ./bin/$(BIN_FILE_NAME)-linux -ldflags "-X main.version=$(VERSION)"
+	GOOS=darwin GOARCH=amd64 go build -o ./bin/$(BIN_FILE_NAME) -ldflags "-X main.version=$(VERSION)" cmd/expand/main.go
+	GOOS=linux GOARCH=amd64 go build -o ./bin/$(BIN_FILE_NAME)-linux -ldflags "-X main.version=$(VERSION)" cmd/expand/main.go
+	chmod 755 bin/*
 
 .PHONY: test
 test:
