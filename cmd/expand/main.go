@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"log"
 
 	"github.com/Raita876/expand"
 )
@@ -10,9 +10,16 @@ import (
 func main() {
 	qpc, err := expand.Parse("expand.yaml")
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 
-	fmt.Println(qpc)
+	urlArray, err := qpc.Create()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, url := range urlArray {
+		fmt.Printf("%s\n", url)
+	}
+
 }
