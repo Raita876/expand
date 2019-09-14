@@ -1,5 +1,5 @@
 VERSION := 0.1.0
-BIN_FILE_NAME := goexp
+BIN_FILE_NAME := goexpand
 DOCKER_CONTAINER_NAME := go-build
 
 .PHONY: build
