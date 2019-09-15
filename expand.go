@@ -68,6 +68,10 @@ func (qp *QueryParameter) ToStrArray() ([]string, error) {
 		return qpStrArray, err
 	}
 
+	if qp.NullAble {
+		qpStrArray = append(qpStrArray, "")
+	}
+
 	return qpStrArray, nil
 }
 
