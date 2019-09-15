@@ -1,4 +1,4 @@
-VERSION := 0.1.0
+VERSION := 0.2.0
 BIN_FILE_NAME := goexpand
 DOCKER_CONTAINER_NAME := go-build
 
