@@ -24,9 +24,22 @@ func cartesianHelper(list [][]string, result [][]string) [][]string {
 func toQueryParameterStrList(str2DArray [][]string) []string {
 	var qpsList []string
 	for _, sl := range str2DArray {
+		sl = removeEmptyStr(sl)
 		qps := strings.Join(sl, "&")
 		qpsList = append(qpsList, qps)
 	}
 
 	return qpsList
+}
+
+func removeEmptyStr(strArray []string) []string {
+	var result []string
+
+	for _, s := range strArray {
+		if s != "" {
+			result = append(result, s)
+		}
+	}
+
+	return result
 }
